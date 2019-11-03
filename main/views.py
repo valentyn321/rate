@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def currenties_list(request):
+    return render(request, 'main/currenties_list.html', {})
