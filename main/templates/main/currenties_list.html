@@ -3,7 +3,16 @@
         <title>Курс валют в Україні!</title>
     </head>
     <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
+        <div>
+            {% for currency in currenties %}
+                <div>
+                    <h1>Валютна пара: <a href="">{{ currency.name }}</a></h1>
+                    <h3>Купівля: {{ currency.purchase }}</h3>
+                    <h3>Продаж: {{ currency.selling }}</h3>
+
+
+                </div>
+            {% endfor %}
+        </div>
     </body>
 </html>
