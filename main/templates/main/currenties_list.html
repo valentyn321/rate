@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for currency in currenties %}
-         <div class="post">
+         <div class="post" class="container-fluid">
          <h2>Валютна пара: <a href="">{{ currency.name }}</a></h2>
             <p>Купівля: {{ currency.purchase }}</p>
             <p>Продаж: {{ currency.selling }}</p>

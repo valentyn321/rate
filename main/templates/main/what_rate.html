@@ -1,9 +1,17 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-    <h1>Дізнатись курс!</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
+    <h1 class="text-center">Дізнатись курс!</h1>
+    <p class="text-center" class="text-primary">На данний момент досупні лише: USD/UAH, EUR/UAH, RUR/UAH</p>
+    <form method="POST">{% csrf_token %}
+        <div>
         {{ form.as_p }}
+
+        </div>
+
         <button type="submit" class="save btn btn-primary">Дізнатись!</button>
+
     </form>
+        <p>Купівля: {{ purchase }}</p>
+        <p>Продаж: {{selling }}</p>
 {% endblock %}
