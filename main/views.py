@@ -7,8 +7,7 @@ from django.shortcuts import redirect
 
 jsonurl = "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11"
 response = urllib.request.urlopen(jsonurl)
-buf = response.read()
-data = json.loads(buf.decode('utf-8'))
+data = json.loads(response.content.decode('utf-8'))
 
 
 def currenties_list(request):
