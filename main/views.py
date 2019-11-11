@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from .models import Currency
 from .forms import CurrencyForm
-import urllib.request, json
-
+import urllib, json
+import urllib.request as ur
+import urllib.parse as par
 from django.shortcuts import redirect
 
 jsonurl = "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11"
-response = urllib.request.urlopen(jsonurl)
-data = json.loads(response.content.decode('utf-8'))
-
+html = ur.urlopen(jsonurl).read()
+data = json.loads(html.decode('utf-8'))
 
 def currenties_list(request):
     currenties = Currency.objects.order_by('-selling')
