@@ -2,16 +2,24 @@
 
 {% block content %}
     <h1 class="text-center">Дізнатись курс!</h1>
-    <p class="text-center" class="text-primary">На данний момент досупні лише: USD/UAH, EUR/UAH, RUR/UAH</p>
-    <form method="POST">{% csrf_token %}
-        <div>
-        {{ form.as_p }}
+<p class="text-center" class="text-primary"><mark>На данний момент досупні лише: USD/UAH, EUR/UAH, RUR/UAH</mark></p>
+<div class="container-fluid">
+    <form method="POST" role="form">{% csrf_token %}
+        <div class="form-group">
+            <h3 class="text-primary">Валютна пара:</h3>
 
+            <input class="form-control input-md" type="text" name="name"  maxlength="7" required id="id_name" placeholder="Введіть потрібну Вам валютну пару...">
+
+            <p class="help-block">Назва пари не повинна перевищувати семи символів, включаючи "/".</p>
         </div>
 
-        <button type="submit" class="save btn btn-primary">Дізнатись!</button>
+        <h3 class="text-primary">Купівля: {{ purchase }}</h3>
+        <h3 class="text-primary">Продаж: {{selling }}</h3>
+
+        <button type="submit" class="btn btn-primary">Дізнатись!</button>
+
 
     </form>
-        <p>Купівля: {{ purchase }}</p>
-        <p>Продаж: {{selling }}</p>
+
+</div>
 {% endblock %}

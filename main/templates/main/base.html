@@ -8,15 +8,41 @@
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
     </head>
     <body>
+    <nav class="navbar navbar-default">
+        <!-- This is my header! -->
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="http://valentyn321.pythonanywhere.com/" class="navbar-brand">СвіжийКурс!</a>
+
+            </div>
+
+
+    <!-- This is the end of my header! -->
+
+    <!-- This is my menu under the header! -->
+    <div>
+        <ul class="nav navbar-nav">
+            <li class="activate"><a href="http://valentyn321.pythonanywhere.com/">Головна</a></li>
+            <li class="activate"><a href="what_rate">Дізнатись курс</a></li>
+            <li class="activate"><a href="#">Про нас</a></li>
+        </ul>
+    </div>
+            </div>
+    </nav>
+
+    <!-- This is the end of my menu under the header! -->
+
+<!--
+
     <div class="page-header">
         <h1><a href="/">Найсвіжіший курс валют!</a></h1>
         {% if user.is_authenticated %}
         <a href="{% url 'what_rate' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %}
+        {% endif %} -->
     </div>
     <div>
     <div>
-        <div class="row">
+        <div> <!--class="row"-->
             <div class="col-md-8 col-md-offset-2">
             {% block content %}
             {% endblock %}
@@ -24,6 +50,8 @@
             </div>
         </div>
     </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     </body>
 </html>
