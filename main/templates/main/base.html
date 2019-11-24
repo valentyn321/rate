@@ -1,57 +1,66 @@
 {% load static %}
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale=1.0>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Курс валют в Україні!</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}"  type="text/css">
     </head>
+
     <body>
-    <nav class="navbar navbar-default">
-        <!-- This is my header! -->
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="http://valentyn321.pythonanywhere.com/" class="navbar-brand">СвіжийКурс!</a>
+   <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+   		<div class="container-fluid">
+   			<a href="http://valentyn321.pythonanywhere.com/" class="navbar-brand"><img src="../static/img/logo.png"></a>
+   			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+   				<span class="navbar-toggler-icon"></span>
+   			</button>
+   			<div class="collapse navbar-collapse" id="navbarResponsivе">
+   				<ul class="navbar-nav ml-auto">
+   					<li class="nav-item active">
+   						<a href="http://valentyn321.pythonanywhere.com/" class="nav-link">Головна сторінка</a>
+   					</li>
+   					<li class="nav-item">
+   						<a href="what_rate" class="nav-link">Дізнатись курс!</a>
+   					</li>
+   					<li class="nav-item">
+   						<a href="#" class="nav-link">Про нас</a>
+   					</li>
+   				</ul>
+   			</div>
 
-            </div>
+   		</div>
+   </nav>
 
-
-    <!-- This is the end of my header! -->
-
-    <!-- This is my menu under the header! -->
-    <div>
-        <ul class="nav navbar-nav">
-            <li class="activate"><a href="http://valentyn321.pythonanywhere.com/">Головна</a></li>
-            <li class="activate"><a href="what_rate">Дізнатись курс</a></li>
-            <li class="activate"><a href="#">Про нас</a></li>
-        </ul>
-    </div>
-            </div>
-    </nav>
-
-    <!-- This is the end of my menu under the header! -->
-
-<!--
-
-    <div class="page-header">
-        <h1><a href="/">Найсвіжіший курс валют!</a></h1>
-        {% if user.is_authenticated %}
-        <a href="{% url 'what_rate' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %} -->
-    </div>
     <div>
     <div>
         <div> <!--class="row"-->
-            <div class="col-md-8 col-md-offset-2">
+            <div>
             {% block content %}
             {% endblock %}
+                  	<footer class="container-fluid">
+   		<div class="container">
+   			<div class="row padding text-center">
+   				<div class="col-12">
+   					Цей сайт є тестовим проектом, контакти:
+   				</div>
+   				<div class="col-12 social padding">
+   					<a href="https://www.instagram.com/vcherkasov17/?hl=uk"><i class="fab fa-instagram"></i></a>
+   					<a href="https://www.telegram.com/"><i class="fab fa-telegram"></i></a>
+   				</div>
+
+   			</div>
+   		</div>
+   	</footer>
                 </div>
             </div>
         </div>
     </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
     </body>
 </html>

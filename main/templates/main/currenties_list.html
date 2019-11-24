@@ -1,17 +1,61 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-    {% for currency in currenties %}
-<style>
-    a {
-    color: #FFFFFF
-    }
-
-    </style>
-         <div class="panel panel-primary"  >
-         <div class="panel-heading"><h2>Валютна пара: <a href="">{{ currency.name }}</a></h2></div>
-            <div class="panel-body"><p>Купівля: {{ currency.purchase }}</p>
-            <p>Продаж: {{ currency.selling }}</p></div>
-         </div>
-    {% endfor %}
+   	<div class="carousel slide" data-ride="carousel" id="slides">
+   		<ul class="carousel-indicators">
+   			<li data-target="#slides" data-slide-to="0" class="active"></li>
+   			<li data-target="#slides" data-slide-to="1"></li>
+   			<li data-target="#slides" data-slide-to="2"></li>
+   		</ul>
+   		<div class="carousel-inner">
+   			<div class="carousel-item active">
+   				<img src="../static/img_car/159129.jpg">
+   				<div class="carousel-caption">
+   					<h1 class="display-2">Курс USD/UAH</h1>
+   					<h3>На сайті СвіжийКурс!</h3>
+   					<button type="button" class="btn btn-primary btn-ld">Переглянути</button>
+   				</div>
+   			</div>
+   			<div class="carousel-item">
+   				<img src="../static/img_car/euro_money_banknotes_113808_3840x2160.jpg">
+   				<div class="carousel-caption">
+   					<h1 class="display-2">Курс EUR/UAH</h1>
+   					<h3>На сайті СвіжийКурс!</h3>
+   					<button type="button" class="btn btn-primary btn-ld">Переглянути</button>
+   				</div>
+   			</div>
+   			<div class="carousel-item">
+   				<img src="../static/img_car/3024049-bank_bank-note_business_cash-and-cash-equivalents_coins_currency_deposit_finance_incentive_investments_money_pound_profit_queen-of-england_revenue_wealth.jpg">
+   				<div class="carousel-caption">
+   					<h1 class="display-2">Курс GPH/UAH</h1>
+   					<h3>На сайті СвіжийКурс!</h3>
+   					<button type="button" class="btn btn-primary btn-ld">Переглянути</button>
+   				</div>
+   			</div>
+   		</div>
+	   		<div>
+				  <!-- Элементы управления -->
+				  <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Предыдущий</span>
+				  </a>
+				  <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Следующий</span>
+				  </a>
+			</div>
+   		</div>
+   	</div>
+   	<div class="container-fluid">
+   		<div class="row jumbotron">
+   			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+   				<p>Валю́тний курс – вираз ціни грошової одиниці однієї країни в грошових одиницях іншої. Фіксація валютного курсу здійснюється або відповідно до золотого паритету (гарантованим золотим змістом національної грошової одиниці), або за міжнародною угодою. При класичному золотому стандарті, тобто при вільному розміні валют на золото в центральному банку, валютний курс встановлювався в пропорціях до їх золотого вмісту. Для конвертованих валют в основі курсу лежить валютний паритет. Проте курси валют майже ніколи не збігаються з їхнім валютним паритетом. В умовах міжнародної торгівлі і інших зовнішньоекономічних акцій співвідношення надходжень і платежів в іноземній валюті і, отже, попит і пропозиція іноземної валюти не перебуває у рівновазі. При активному платіжному балансі курси іноземних валют на валютному ринку даної країни падають, а курс національної грошової одиниці підвищується. Зворотне відбувається у разі, коли країна має пасивний платіжний баланс. Тому в більшості країн разом з твердим офіційним курсом національної валюти також існує вільний. За офіційного паритету здійснюються розрахунки центральних національних банків та інших валютно-фінансових установ між різними країнами і з міжнародними організаціями. Розрахунки між приватними особами і організаціями, виходять із зовнішньоторговельних і зовнішньоекономічних зв'язків та здійснюються по вільному курсу.</p>
+   			</div>
+   			<div class="col-xs-12 col-sm-10ol-md-5 col-lg-3 col-xl-10">
+   				<a href="https://uk.wikipedia.org/wiki/%D0%92%D0%B0%D0%BB%D1%8E%D1%82%D0%BD%D0%B8%D0%B9_%D0%BA%D1%83%D1%80%D1%81">
+   					<button class="btn btn-primary btn-lg" type="button">Ще більше інформації!</button>
+   				</a>
+   			</div>
+   		</div>
+   	</div>
 {% endblock %}

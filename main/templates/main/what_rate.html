@@ -1,8 +1,10 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+<div  class="padding-top">
     <h1 class="text-center">Дізнатись курс!</h1>
-<p class="text-center" class="text-primary"><mark>На данний момент досупні лише: USD/UAH, EUR/UAH, RUR/UAH</mark></p>
+</div>
+<p class="text-center" class="text-primary"><mark>На данний момент досупні лише: USD/UAH, EUR/UAH, RUB/UAH, CAD/UAH, GBP/UAH</mark></p>
 <div class="container-fluid">
     <form method="POST" role="form">{% csrf_token %}
         <div class="form-group">
@@ -13,8 +15,8 @@
             <p class="help-block">Назва пари не повинна перевищувати семи символів, включаючи "/".</p>
         </div>
 
-        <h3 class="text-primary">Купівля: {{ purchase }}</h3>
-        <h3 class="text-primary">Продаж: {{selling }}</h3>
+        <h3 class="text-primary">Купівля: {{ UsdCur.purchase }}</h3>
+        <h3 class="text-primary">Продаж: {{ UsdCur.selling }}</h3>
 
         <button type="submit" class="btn btn-primary">Дізнатись!</button>
 

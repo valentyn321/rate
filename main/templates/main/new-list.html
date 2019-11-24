@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<style type="text/css">
+    a {
+    color: #FFFFFF
+    }
+    th {
+    border: 1px solid red;
+    }
+    td {
+  padding: 50px;
+  padding-right: 10px;
+  border: 1px solid red;
+}
+
+th {
+  padding: 100px;
+  border: 1px solid black;
+}
+
+
+</style>
+
+    <table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Валютна пара</th>
+            <th>Купівля</th>
+            <th>Продаж</th>
+        </tr>
+    </thead>
+    </table>
+
+{% for currency in currenties %}
+
+      <table class="table table-hover table-striped">
+
+
+        <tbody>
+            <tr>
+                <td>{{ currency.name }}</td>
+                <td>{{ currency.purchase }}</td>
+                <td>{{ currency.selling }}</td>
+            </tr>
+        </tbody>
+      </table>
+
+
+
+
+    {% endfor %}
+{% endblock %}
