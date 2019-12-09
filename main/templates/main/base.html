@@ -26,12 +26,27 @@
    					<li class="nav-item active">
    						<a href="http://valentyn321.pythonanywhere.com/" class="nav-link">Головна сторінка</a>
    					</li>
-   					<li class="nav-item">
-   						<a href="what_rate" class="nav-link">Дізнатись курс!</a>
-   					</li>
-   					<li class="nav-item">
-   						<a href="#" class="nav-link">Про нас</a>
-   					</li>
+
+					{% if user.is_authenticated %}
+						<li class="nav-item">
+							<a href="what_rate" class="nav-link">Дізнатись курс!</a>
+						</li>
+						<li class="nav-item">
+							<div class="row">
+							<a href="profile" class="nav-link">{{ user.username }} <img  width="25px" height="25px" class="rounded-circle " src="{{ user.profile.image.url }}"></a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a href="{% url 'logout' %}" class="nav-link">Вийти</a>
+						</li>
+					{% else %}
+						<li class="nav-item">
+							<a href="{% url 'login' %}" class="nav-link">Увійти</a>
+						</li>
+						<li class="nav-item">
+							<a href="register" class="nav-link">Зареєструватись</a>
+						</li>
+					{% endif %}
    				</ul>
    			</div>
 
@@ -42,8 +57,15 @@
     <div>
         <div> <!--class="row"-->
             <div>
-            {% block content %}
-            {% endblock %}
+				{% if messages %}
+					{%  for message in messages %}
+						<div class="alert alert-{{message.tags}}">
+							{{message}}
+						</div>
+					{% endfor %}
+				{% endif %}
+				{% block content %}
+				{% endblock %}
                   	<footer class="container-fluid">
    		<div class="container">
    			<div class="row padding text-center">

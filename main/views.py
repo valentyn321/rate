@@ -1,19 +1,21 @@
 from django.shortcuts import render
 from .models import Currency
 from .forms import CurrencyForm
+from django.contrib.auth.decorators import login_required
 import urllib, json
 import urllib.request as ur
 import urllib.parse as par
 from django.shortcuts import redirect
 
-jsonurl = "http://resources.finance.ua/ua/public/currency-cash.json"
+'''jsonurl = "http://resources.finance.ua/ua/public/currency-cash.json"
 html = ur.urlopen(jsonurl).read()
-data = json.loads(html.decode('utf-8'))
+data = json.loads(html.decode('utf-8'))'''
 
 def currenties_list(request):
     currenties = Currency.objects.order_by('-selling')
     return render(request, 'main/currenties_list.html', {'currenties':currenties})
 
+@login_required
 def what_rate(request):
     if request.method == "POST":
         form = CurrencyForm(request.POST)
