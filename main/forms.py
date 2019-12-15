@@ -5,3 +5,4 @@ class CurrencyForm(forms.ModelForm):
     class Meta:
         model = Currency
         fields = ('name',)
+

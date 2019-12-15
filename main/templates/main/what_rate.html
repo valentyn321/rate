@@ -1,27 +1,28 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+{% load staticfiles %}
 <div  class="padding-top">
     <h1 class="text-center">Дізнатись курс!</h1>
 </div>
-<p class="text-center" class="text-primary"><mark>На данний момент досупні лише: USD/UAH, EUR/UAH, RUB/UAH, CAD/UAH, GBP/UAH</mark></p>
+<p class="text-center" class="text-primary"><mark>На данний момент досупні лише: USD/UAH, EUR/UAH, RUB/UAH, BTC/UAH</mark></p>
 <div class="container-fluid">
-    <form method="POST" role="form">{% csrf_token %}
-        <div class="form-group">
-            <h3 class="text-primary">Валютна пара:</h3>
-
-            <input class="form-control input-md" type="text" name="name"  maxlength="7" required id="id_name" placeholder="Введіть потрібну Вам валютну пару...">
-
-            <p class="help-block">Назва пари не повинна перевищувати семи символів, включаючи "/".</p>
-        </div>
-
-        <h3 class="text-primary">Купівля: {{ purchase }}</h3>
-        <h3 class="text-primary">Продаж: {{ selling }}</h3>
-
-        <button type="submit" class="btn btn-primary">Дізнатись!</button>
-
-
-    </form>
-
+	
+	<form method="POST" > 
+		{% csrf_token %}
+		<select name='name' class="form-control form-control-lg" id='select'>
+ 			<option value="USD/UAH">USD/UAH</option>
+ 			<option value="EUR/UAH">EUR/UAH</option>
+ 			<option value="RUB/UAH">RUB/UAH</option>
+ 			<option value="BTC/UAH">BTC/UAH</option>
+		</select>
+		<h1>Купівля: {{ purchase }}</h1>
+		<h1>Продаж: {{ selling }}</h1>
+		<button id="check" class="btn btn-primary">Дізнатись курс!</button>
+	</form>
 </div>
+{% endblock %}
+
+{% block add_script %}
+	<script src={% static 'scripts/my_script.js' %}></script>>
 {% endblock %}
