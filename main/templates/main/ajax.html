@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+{% load staticfiles %}
+<a href="#" id="ajax-text-me">Натисни мене ніжно</a>
+<div id="more-text-1"></div>
+<div  id="more-text-2"></div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#ajax-text-me").click(function() {
+            $.ajax({
+                type: 'GET',
+                async: true,
+                url: '/ajax/#',
+                data: "param1=value1&param2=value2;",
+                success: function(data) {
+                    $("#more-text-1").append(data['first-text']);
+                    $("#more-text-2").append(data['second-text']);
+
+                },
+                dataType: 'json',
+            });
+        });
+    });
+</script>
+
+
+{% endblock %}

@@ -8,7 +8,7 @@
 <p class="text-center" class="text-primary"><mark>На данний момент досупні лише: USD/UAH, EUR/UAH, RUB/UAH, BTC/UAH</mark></p>
 <div class="container-fluid">
 	
-	<form method="POST" > 
+	<form method="POST" id="form" > 
 		{% csrf_token %}
 		<select name='name' class="form-control form-control-lg" id='select'>
  			<option value="USD/UAH">USD/UAH</option>
@@ -16,13 +16,11 @@
  			<option value="RUB/UAH">RUB/UAH</option>
  			<option value="BTC/UAH">BTC/UAH</option>
 		</select>
-		<h1>Купівля: {{ purchase }}</h1>
-		<h1>Продаж: {{ selling }}</h1>
-		<button id="check" class="btn btn-primary">Дізнатись курс!</button>
+		<h1 id="form.result" >Купівля: {{ purchase }}</h1>
+		<h1 id="sell" >Продаж: {{ selling }}</h1>
+		<button id="check" class="btn btn-primary" type="submit" >Дізнатись курс!</button>
 	</form>
 </div>
-{% endblock %}
-
-{% block add_script %}
-	<script src={% static 'scripts/my_script.js' %}></script>>
+<script type="text/javascript">
+</script>
 {% endblock %}
