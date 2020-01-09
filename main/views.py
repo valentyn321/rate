@@ -1,5 +1,4 @@
 from django.http import Http404, JsonResponse, HttpResponse
-from django.shortcuts import render_to_response
 from django.shortcuts import render
 from .models import Currency
 from .forms import CurrencyForm
