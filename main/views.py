@@ -1,4 +1,5 @@
 from django.http import Http404, JsonResponse, HttpResponse
+from django.shortcuts import render_to_response
 from django.shortcuts import render
 from .models import Currency
 from .forms import CurrencyForm
@@ -6,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 import urllib, json
 import urllib.request
 from django.template.loader import render_to_string
-from django.views.generic import FormView
+
 
 
 
@@ -55,11 +56,3 @@ def what_rate(request):
         form = CurrencyForm()
     return render(request, 'main/what_rate.html', {'form': form})
 
-
-def ajax(request):
-    if request.is_ajax():
-        response = {'first-text': 'Lorem Ipsum is simply dummy text', 'second-text': 'to make a type specimen book. It has '}
-        return JsonResponse(response)
-    else:
-        return Http404
-        
